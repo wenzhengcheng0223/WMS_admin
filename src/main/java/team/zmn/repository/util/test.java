@@ -13,5 +13,6 @@ import com.alibaba.druid.support.json.JSONUtils;
 public class test {
     public static void main(String[] args) {
         System.out.println("HAHA");
+        System.out.println("haha");
     }
 }
