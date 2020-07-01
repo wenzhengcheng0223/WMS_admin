@@ -29,7 +29,7 @@
       <artifactId>mysql-connector-java</artifactId>
       <version>8.0.17</version>
     </dependency>
-
+<!-- 引入逆向工程的jar包 -->
     <dependency>
       <groupId>org.mybatis.generator</groupId>
       <artifactId>mybatis-generator-core</artifactId>
@@ -42,6 +42,7 @@
     <finalName>repository</finalName>
 <!--   插件管理-->
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+      <!-- 设置我们的插件 -->
       <plugins>
         <plugin>
           <groupId>org.mybatis.generator</groupId>
