@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="team.zmn.repository.dao.ProductStockMapper" >
+  <resultMap id="BaseResultMap" type="team.zmn.repository.pojo.ProductStock" >
+    <id column="p_stock_No" property="pStockNo" jdbcType="VARCHAR" />
+    <result column="p_id" property="pId" jdbcType="VARCHAR" />
+    <result column="p_name" property="pName" jdbcType="VARCHAR" />
+    <result column="p_type" property="pType" jdbcType="VARCHAR" />
+    <result column="p_stock_price" property="pStockPrice" jdbcType="REAL" />
+    <result column="p_stock_number" property="pStockNumber" jdbcType="REAL" />
+    <result column="p_stock_total" property="pStockTotal" jdbcType="REAL" />
+    <result column="p_supplier" property="pSupplier" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="VARCHAR" />
+    <result column="p_stock_date" property="pStockDate" jdbcType="DATE" />
+    <result column="p_remarks" property="pRemarks" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from product_stock
+    where p_stock_No = #{pStockNo,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="team.zmn.repository.pojo.ProductStock" >
+    insert into product_stock (p_stock_No, p_id, p_name, 
+      p_type, p_stock_price, p_stock_number, 
+      p_stock_total, p_supplier, user_id, 
+      p_stock_date, p_remarks)
+    values (#{pStockNo,jdbcType=VARCHAR}, #{pId,jdbcType=VARCHAR}, #{pName,jdbcType=VARCHAR}, 
+      #{pType,jdbcType=VARCHAR}, #{pStockPrice,jdbcType=REAL}, #{pStockNumber,jdbcType=REAL}, 
+      #{pStockTotal,jdbcType=REAL}, #{pSupplier,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, 
+      #{pStockDate,jdbcType=DATE}, #{pRemarks,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="team.zmn.repository.pojo.ProductStock" >
+    update product_stock
+    set p_id = #{pId,jdbcType=VARCHAR},
+      p_name = #{pName,jdbcType=VARCHAR},
+      p_type = #{pType,jdbcType=VARCHAR},
+      p_stock_price = #{pStockPrice,jdbcType=REAL},
+      p_stock_number = #{pStockNumber,jdbcType=REAL},
+      p_stock_total = #{pStockTotal,jdbcType=REAL},
+      p_supplier = #{pSupplier,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=VARCHAR},
+      p_stock_date = #{pStockDate,jdbcType=DATE},
+      p_remarks = #{pRemarks,jdbcType=VARCHAR}
+    where p_stock_No = #{pStockNo,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select p_stock_No, p_id, p_name, p_type, p_stock_price, p_stock_number, p_stock_total, 
+    p_supplier, user_id, p_stock_date, p_remarks
+    from product_stock
+    where p_stock_No = #{pStockNo,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select p_stock_No, p_id, p_name, p_type, p_stock_price, p_stock_number, p_stock_total, 
+    p_supplier, user_id, p_stock_date, p_remarks
+    from product_stock
+  </select>
+</mapper>
