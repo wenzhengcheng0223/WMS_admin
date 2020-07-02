@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="team.zmn.repository.dao.ProductDeliveryMapper" >
+  <resultMap id="BaseResultMap" type="team.zmn.repository.pojo.ProductDelivery" >
+    <id column="p_delivery_No" property="pDeliveryNo" jdbcType="VARCHAR" />
+    <result column="p_id" property="pId" jdbcType="VARCHAR" />
+    <result column="p_name" property="pName" jdbcType="VARCHAR" />
+    <result column="p_type" property="pType" jdbcType="VARCHAR" />
+    <result column="p_delivery_price" property="pDeliveryPrice" jdbcType="REAL" />
+    <result column="p_delivery_number" property="pDeliveryNumber" jdbcType="REAL" />
+    <result column="p_delivery_total" property="pDeliveryTotal" jdbcType="REAL" />
+    <result column="user_id" property="userId" jdbcType="VARCHAR" />
+    <result column="p_delivery_address" property="pDeliveryAddress" jdbcType="VARCHAR" />
+    <result column="p_payment_method" property="pPaymentMethod" jdbcType="VARCHAR" />
+    <result column="p_delivery_date" property="pDeliveryDate" jdbcType="DATE" />
+    <result column="p_delivery_remarks" property="pDeliveryRemarks" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from product_delivery
+    where p_delivery_No = #{pDeliveryNo,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="team.zmn.repository.pojo.ProductDelivery" >
+    insert into product_delivery (p_delivery_No, p_id, p_name, 
+      p_type, p_delivery_price, p_delivery_number, 
+      p_delivery_total, user_id, p_delivery_address, 
+      p_payment_method, p_delivery_date, p_delivery_remarks
+      )
+    values (#{pDeliveryNo,jdbcType=VARCHAR}, #{pId,jdbcType=VARCHAR}, #{pName,jdbcType=VARCHAR}, 
+      #{pType,jdbcType=VARCHAR}, #{pDeliveryPrice,jdbcType=REAL}, #{pDeliveryNumber,jdbcType=REAL}, 
+      #{pDeliveryTotal,jdbcType=REAL}, #{userId,jdbcType=VARCHAR}, #{pDeliveryAddress,jdbcType=VARCHAR}, 
+      #{pPaymentMethod,jdbcType=VARCHAR}, #{pDeliveryDate,jdbcType=DATE}, #{pDeliveryRemarks,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="team.zmn.repository.pojo.ProductDelivery" >
+    update product_delivery
+    set p_id = #{pId,jdbcType=VARCHAR},
+      p_name = #{pName,jdbcType=VARCHAR},
+      p_type = #{pType,jdbcType=VARCHAR},
+      p_delivery_price = #{pDeliveryPrice,jdbcType=REAL},
+      p_delivery_number = #{pDeliveryNumber,jdbcType=REAL},
+      p_delivery_total = #{pDeliveryTotal,jdbcType=REAL},
+      user_id = #{userId,jdbcType=VARCHAR},
+      p_delivery_address = #{pDeliveryAddress,jdbcType=VARCHAR},
+      p_payment_method = #{pPaymentMethod,jdbcType=VARCHAR},
+      p_delivery_date = #{pDeliveryDate,jdbcType=DATE},
+      p_delivery_remarks = #{pDeliveryRemarks,jdbcType=LONGVARCHAR}
+    where p_delivery_No = #{pDeliveryNo,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select p_delivery_No, p_id, p_name, p_type, p_delivery_price, p_delivery_number, 
+    p_delivery_total, user_id, p_delivery_address, p_payment_method, p_delivery_date, 
+    p_delivery_remarks
+    from product_delivery
+    where p_delivery_No = #{pDeliveryNo,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select p_delivery_No, p_id, p_name, p_type, p_delivery_price, p_delivery_number, 
+    p_delivery_total, user_id, p_delivery_address, p_payment_method, p_delivery_date, 
+    p_delivery_remarks
+    from product_delivery
+  </select>
+</mapper>

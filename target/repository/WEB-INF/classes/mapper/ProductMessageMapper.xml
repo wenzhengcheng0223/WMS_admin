@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="team.zmn.repository.dao.ProductMessageMapper" >
+  <resultMap id="BaseResultMap" type="team.zmn.repository.pojo.ProductMessage" >
+    <id column="p_id" property="pId" jdbcType="VARCHAR" />
+    <result column="p_name" property="pName" jdbcType="VARCHAR" />
+    <result column="p_type" property="pType" jdbcType="VARCHAR" />
+    <result column="p_balance" property="pBalance" jdbcType="REAL" />
+    <result column="p_stock_price" property="pStockPrice" jdbcType="REAL" />
+    <result column="p_delivery_price" property="pDeliveryPrice" jdbcType="REAL" />
+    <result column="repository_id" property="repositoryId" jdbcType="VARCHAR" />
+    <result column="repository_name" property="repositoryName" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from product_message
+    where p_id = #{pId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="team.zmn.repository.pojo.ProductMessage" >
+    insert into product_message (p_id, p_name, p_type, 
+      p_balance, p_stock_price, p_delivery_price, 
+      repository_id, repository_name)
+    values (#{pId,jdbcType=VARCHAR}, #{pName,jdbcType=VARCHAR}, #{pType,jdbcType=VARCHAR}, 
+      #{pBalance,jdbcType=REAL}, #{pStockPrice,jdbcType=REAL}, #{pDeliveryPrice,jdbcType=REAL}, 
+      #{repositoryId,jdbcType=VARCHAR}, #{repositoryName,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="team.zmn.repository.pojo.ProductMessage" >
+    update product_message
+    set p_name = #{pName,jdbcType=VARCHAR},
+      p_type = #{pType,jdbcType=VARCHAR},
+      p_balance = #{pBalance,jdbcType=REAL},
+      p_stock_price = #{pStockPrice,jdbcType=REAL},
+      p_delivery_price = #{pDeliveryPrice,jdbcType=REAL},
+      repository_id = #{repositoryId,jdbcType=VARCHAR},
+      repository_name = #{repositoryName,jdbcType=VARCHAR}
+    where p_id = #{pId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select p_id, p_name, p_type, p_balance, p_stock_price, p_delivery_price, repository_id, 
+    repository_name
+    from product_message
+    where p_id = #{pId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select p_id, p_name, p_type, p_balance, p_stock_price, p_delivery_price, repository_id, 
+    repository_name
+    from product_message
+  </select>
+</mapper>
