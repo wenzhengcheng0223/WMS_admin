@@ -49,38 +49,44 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
-
-
+        <!-- 第一张表 用户表 前面是数据库表的名称   后面是生成的实体类的名称  -->
+        <!-- 写类大驼峰命名法、写函数、参数是小驼峰命名法-->
         <table tableName="user" domainObjectName="User"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
         </table>
+        <!-- 第二张表 角色表-->
         <table tableName="role" domainObjectName="Role"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
         </table>
+        <!-- 第三张表 商品信息表-->
         <table tableName="product_message" domainObjectName="ProductMessage"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
         </table>
+        <!-- 第四张表 商品出库表-->
         <table tableName="product_delivery" domainObjectName="ProductDelivery"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
         </table>
+        <!-- 第五张表 商品入库表-->
         <table tableName="product_stock" domainObjectName="ProductStock"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
         </table>
+        <!-- 第六张表 仓库表-->
         <table tableName="repository" domainObjectName="Repository"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
         </table>
+        <!-- 第七张表 仓库信息表-->
         <table tableName="repository_message" domainObjectName="RepositoryMessage"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"

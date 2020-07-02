@@ -2,13 +2,14 @@ package team.zmn.repository.dao;
 
 import java.util.List;
 import team.zmn.repository.pojo.User;
+import team.zmn.repository.pojo.UserWithBLOBs;
 
 public interface UserMapper {
-    int deleteByPrimaryKey(String userId);
+    int deleteByPrimaryKey(String user);
 
     int insert(User record);
 
-    User selectByPrimaryKey(String userId);
+    UserWithBLOBs selectByPrimaryKey(String user);
 
     List<User> selectAll();
 
