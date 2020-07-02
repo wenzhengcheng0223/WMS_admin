@@ -1,5 +1,10 @@
 package team.zmn.repository.service;
 
+import team.zmn.repository.pojo.Result;
+import team.zmn.repository.pojo.User;
+
+import java.util.List;
+
 /**
  * Created by IntelliJ IDEA.
  *
@@ -8,5 +13,12 @@ package team.zmn.repository.service;
  * Time: 14:19
  */
 
-interface  UserService {
+public interface  UserService {
+
+    /**
+     *
+     * 查询用户表所有用户
+     * @return list
+     */
+    Result selectAll();
 }

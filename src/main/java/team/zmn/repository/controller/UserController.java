@@ -1,8 +1,14 @@
 package team.zmn.repository.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import team.zmn.repository.pojo.Result;
+import team.zmn.repository.pojo.User;
+import team.zmn.repository.service.UserService;
+
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -15,10 +21,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/user")
 public class UserController {
 
+    @Autowired
+    private UserService userService;
 
     @ResponseBody
     @RequestMapping("/selectAll")
-    public void selectAll(){
-
+    public Result selectAll(){
+        Result result = userService.selectAll();
+        return result;
     }
 }
