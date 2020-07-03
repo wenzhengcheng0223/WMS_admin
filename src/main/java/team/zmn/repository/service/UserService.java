@@ -17,7 +17,7 @@ public interface  UserService {
 
     /**
      *
-     * 查询用户表所有用户
+     * 查询用户表所有用户以及角色表的用户权限
      * @return list
      */
     Result selectAll();

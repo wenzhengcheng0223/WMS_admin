@@ -22,7 +22,7 @@ public class ProductStock implements Serializable {
 
     private String userId;
 
-    private Date pStockDate;
+    private String pStockDate;
 
     private String pRemarks;
 
@@ -100,11 +100,11 @@ public class ProductStock implements Serializable {
         this.userId = userId == null ? null : userId.trim();
     }
 
-    public Date getpStockDate() {
+    public String getpStockDate() {
         return pStockDate;
     }
 
-    public void setpStockDate(Date pStockDate) {
+    public void setpStockDate(String pStockDate) {
         this.pStockDate = pStockDate;
     }
 

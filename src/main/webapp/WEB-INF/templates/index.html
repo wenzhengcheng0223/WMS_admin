@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>layout 后台大布局 - Layui</title>
 
-    <link rel="stylesheet" href="layui/layui/css/layui.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="../layui/layui/css/layui.css">
+    <link rel="stylesheet" href="../css/index.css">
 </head>
 
 <body class="layui-layout-body">
@@ -34,7 +34,7 @@
             <ul class="layui-nav layui-layout-right">
                 <li class="layui-nav-item">
                     <a href="javascript:;" class="m-item">
-                        <img src="images/head.png" class="layui-nav-img">
+                        <img src="../img/head.png" class="layui-nav-img">
                         贤心
                     </a>
                     <dl class="layui-nav-child">
@@ -55,13 +55,13 @@
                     <li class="layui-nav-item">
                         <a href="javascript:;">商品</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="target/product.html" target="ifra">商品信息</a></dd>
+                            <dd><a href="product.html" target="ifra">商品信息</a></dd>
                         </dl>
                     </li>
                     <li class="layui-nav-item">
                         <a href="javascript:;">入库</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="target/stock.html" target="ifra">商品入库</a></dd>
+                            <dd><a href="stock.html" target="ifra">商品入库</a></dd>
                         </dl>
                     </li>
                     <li class="layui-nav-item">
@@ -79,7 +79,7 @@
                     <li class="layui-nav-item">
                         <a href="javascript:;">用户</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="javascript:;">网站用户</a></dd>
+                            <dd><a href="templates/user.html" target="ifra">网站用户</a></dd>
                             <dd><a href="javascript:;">后台管理员</a></dd>
                             <dd><a href="javascript:;">权限管理</a></dd>
                         </dl>
@@ -108,12 +108,15 @@
             © layui.com - 底部固定区域
         </div>
     </div>
-    <script src="layui/layui/layui.js"></script>
+    <script src="../layui/layui/layui.js"></script>
     <script>
         //JavaScript代码区域
         layui.use('element', function() {
             var element = layui.element;
 
         });
+
     </script>
-</body></html>
+</body>
+
+</html>

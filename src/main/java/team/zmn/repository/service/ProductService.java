@@ -1,5 +1,7 @@
 package team.zmn.repository.service;
 
+import team.zmn.repository.pojo.Result;
+
 /**
  * Created by IntelliJ IDEA.
  *
@@ -9,4 +11,10 @@ package team.zmn.repository.service;
  */
 
 public interface ProductService {
+    /**
+     * 查询所有商品信息以及仓库现有库存量
+     * @return Result
+     */
+    Result selectAll();
+
 }

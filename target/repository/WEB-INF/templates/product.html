@@ -37,7 +37,7 @@
 
             table.render({
                 elem: '#test',
-                url: '/test/table/demo1.json',
+                url: '../product/selectAll',
                 toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
                     ,
                 defaultToolbar: ['filter', 'exports', 'print', { //自定义头部工具栏右侧图标。如无需自定义，去除该参数即可
@@ -45,67 +45,52 @@
                     layEvent: 'LAYTABLE_TIPS',
                     icon: 'layui-icon-tips'
                 }],
-                title: '用户数据表',
+                title: '商品数据表',
                 cols: [
                     [{
                         type: 'checkbox',
                         fixed: 'left'
                     }, {
-                        field: 'id',
-                        title: 'ID',
-                        width: 80,
+                        field: 'p_id',
+                        title: '商品ID',
                         fixed: 'left',
                         unresize: true,
                         sort: true
                     }, {
-                        field: 'username',
-                        title: '用户名',
-                        width: 120,
+                        field: 'p_name',
+                        title: '商品名称',
                         edit: 'text'
                     }, {
-                        field: 'email',
-                        title: '邮箱',
-                        width: 150,
+                        field: 'p_type',
+                        title: '商品类型',
                         edit: 'text',
-                        templet: function(res) {
-                            return '<em>' + res.email + '</em>'
-                        }
+
                     }, {
-                        field: 'sex',
-                        title: '性别',
-                        width: 80,
+                        field: 'p_balance1',
+                        title: '原始库存量',
                         edit: 'text',
                         sort: true
                     }, {
-                        field: 'city',
-                        title: '城市',
-                        width: 100
+                        field: 'p_stock_price',
+                        title: '入库价格',
                     }, {
-                        field: 'sign',
-                        title: '签名'
+                        field: 'p_delivery_price',
+                        title: '出库价格'
                     }, {
-                        field: 'experience',
-                        title: '积分',
-                        width: 80,
+                        field: 'repository_name',
+                        title: '仓库名称',
                         sort: true
                     }, {
-                        field: 'ip',
-                        title: 'IP',
-                        width: 120
-                    }, {
-                        field: 'logins',
-                        title: '登入次数',
-                        width: 100,
-                        sort: true
-                    }, {
-                        field: 'joinTime',
-                        title: '加入时间',
-                        width: 120
-                    }, {
+                        field: 'kinds',
+                        title: '仓库类型',
+                    },{
+                        field: 'p_balance',
+                        title: '现有库存量',
+                    },{
                         fixed: 'right',
                         title: '操作',
                         toolbar: '#barDemo',
-                        width: 150
+
                     }]
                 ],
                 page: true

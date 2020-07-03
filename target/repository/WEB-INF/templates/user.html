@@ -51,25 +51,31 @@
                     type: 'checkbox',
                     fixed: 'left'
                 }, {
-                    field: 'userId',
+                    field: 'user_id',
                     title: 'ID',
                     fixed: 'left',
                     sort: true
                 }, {
-                    field: 'userName',
+                    field: 'user_name',
                     title: '用户名',
 
                 }, {
-                    field: 'userPassword',
+                    field: 'user_password',
                     title: '密码',
 
 
                 }, {
-                    field: 'roleId',
+                    field: 'role_type',
                     title: '用户权限',
 
                     sort: true
+                },{
+                    fixed: 'right',
+                    title: '操作',
+                    toolbar: '#barDemo',
+
                 }]
+
             ],
             page: true
         });
