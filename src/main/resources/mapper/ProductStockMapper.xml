@@ -11,7 +11,7 @@
     <result column="p_stock_total" property="pStockTotal" jdbcType="REAL" />
     <result column="p_supplier" property="pSupplier" jdbcType="VARCHAR" />
     <result column="user_id" property="userId" jdbcType="VARCHAR" />
-    <result column="p_stock_date" property="pStockDate" jdbcType="DATE" />
+    <result column="p_stock_date" property="pStockDate" jdbcType="VARCHAR" />
     <result column="p_remarks" property="pRemarks" jdbcType="VARCHAR" />
   </resultMap>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >

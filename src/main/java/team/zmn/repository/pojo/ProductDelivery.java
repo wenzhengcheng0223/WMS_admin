@@ -24,7 +24,7 @@ public class ProductDelivery implements Serializable {
 
     private String pPaymentMethod;
 
-    private Date pDeliveryDate;
+    private String  pDeliveryDate;
 
     private String pDeliveryRemarks;
 
@@ -110,11 +110,11 @@ public class ProductDelivery implements Serializable {
         this.pPaymentMethod = pPaymentMethod == null ? null : pPaymentMethod.trim();
     }
 
-    public Date getpDeliveryDate() {
+    public String  getpDeliveryDate() {
         return pDeliveryDate;
     }
 
-    public void setpDeliveryDate(Date pDeliveryDate) {
+    public void setpDeliveryDate(String  pDeliveryDate) {
         this.pDeliveryDate = pDeliveryDate;
     }
 

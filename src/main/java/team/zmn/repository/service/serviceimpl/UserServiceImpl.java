@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import team.zmn.repository.dao.UserMapper;
 import team.zmn.repository.pojo.Result;
 import team.zmn.repository.pojo.User;
+import team.zmn.repository.pojo.UserDto;
 import team.zmn.repository.service.UserService;
 
 import java.util.List;
@@ -25,7 +26,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Result selectAll() {
-        List<User> list = userMapper.selectAll();
+        List<UserDto> list = userMapper.selectAll();
         result.setCode(0);
         result.setMsg("success");
         result.setData(list);

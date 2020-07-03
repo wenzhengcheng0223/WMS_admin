@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import team.zmn.repository.pojo.Result;
 import team.zmn.repository.pojo.User;
 import team.zmn.repository.service.UserService;
+import team.zmn.repository.service.serviceimpl.UserServiceImpl;
 
 import java.util.List;
 

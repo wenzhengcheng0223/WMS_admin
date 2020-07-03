@@ -29,7 +29,7 @@
     from user
     where user_id = #{userId,jdbcType=VARCHAR}
   </select>
-  <select id="selectAll" resultMap="BaseResultMap">
+  <select id="selectAll" resultType="team.zmn.repository.pojo.UserDto">
     SELECT u.user_id, u.user_name,u.user_password,r.role_type
     FROM `user` AS u ,role AS r
     WHERE u.role_id = r.role_id

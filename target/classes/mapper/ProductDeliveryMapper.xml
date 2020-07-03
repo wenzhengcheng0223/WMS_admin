@@ -12,7 +12,7 @@
     <result column="user_id" property="userId" jdbcType="VARCHAR" />
     <result column="p_delivery_address" property="pDeliveryAddress" jdbcType="VARCHAR" />
     <result column="p_payment_method" property="pPaymentMethod" jdbcType="VARCHAR" />
-    <result column="p_delivery_date" property="pDeliveryDate" jdbcType="DATE" />
+    <result column="p_delivery_date" property="pDeliveryDate" jdbcType="VARCHAR" />
     <result column="p_delivery_remarks" property="pDeliveryRemarks" jdbcType="LONGVARCHAR" />
   </resultMap>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >

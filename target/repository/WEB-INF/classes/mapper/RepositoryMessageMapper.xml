@@ -29,8 +29,12 @@
     from repository_message
     where id = #{id,jdbcType=VARCHAR}
   </select>
-  <select id="selectAll" resultMap="BaseResultMap" >
-    select id, repository_id, p_id, p_balance
-    from repository_message
+  <select id="selectAll" resultType="team.zmn.repository.pojo.RepositoryMessageDto" >
+    SELECT
+        rem.id,	re.repository_name,	re.kinds,	rem.p_id,	pm.p_name,	rem.p_balance
+    FROM
+        repository_message AS rem,	repository AS re,	product_message AS pm
+    WHERE
+        rem.repository_id = re.repository_id 	AND rem.p_id = pm.p_id
   </select>
 </mapper>

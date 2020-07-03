@@ -40,9 +40,23 @@
     from product_message
     where p_id = #{pId,jdbcType=VARCHAR}
   </select>
-  <select id="selectAll" resultMap="BaseResultMap" >
-    select p_id, p_name, p_type, p_balance, p_stock_price, p_delivery_price, repository_id, 
-    repository_name
-    from product_message
+  <select id="selectAll" resultType="team.zmn.repository.pojo.ProductMessageDto" >
+   SELECT
+	pm.p_id,
+	pm.p_name,
+	pm.p_type,
+	pm.p_balance1,
+	pm.p_stock_price,
+	pm.p_delivery_price,
+	re.repository_name,
+	re.kinds,
+	rem.p_balance
+FROM
+	product_message AS pm,
+	repository AS re,
+	repository_message AS rem
+WHERE
+	pm.repository_id = re.repository_id
+	AND re.repository_id = rem.repository_id
   </select>
 </mapper>

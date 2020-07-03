@@ -2,6 +2,7 @@ package team.zmn.repository.dao;
 
 import java.util.List;
 import team.zmn.repository.pojo.RepositoryMessage;
+import team.zmn.repository.pojo.RepositoryMessageDto;
 
 public interface RepositoryMessageMapper {
     int deleteByPrimaryKey(String id);
@@ -10,7 +11,7 @@ public interface RepositoryMessageMapper {
 
     RepositoryMessage selectByPrimaryKey(String id);
 
-    List<RepositoryMessage> selectAll();
+    List<RepositoryMessageDto> selectAll();
 
     int updateByPrimaryKey(RepositoryMessage record);
 }
