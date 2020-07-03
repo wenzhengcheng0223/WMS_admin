@@ -3,6 +3,7 @@ package team.zmn.repository.pojo;
 import java.io.Serializable;
 
 public class ProductMessage implements Serializable {
+    private String id;
     private String pId;
 
     private String pName;
@@ -20,6 +21,22 @@ public class ProductMessage implements Serializable {
     private String repositoryName;
 
     private static final long serialVersionUID = 1L;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Float getpBalance1() {
+        return pBalance1;
+    }
+
+    public void setpBalance1(Float pBalance1) {
+        this.pBalance1 = pBalance1;
+    }
 
     public String getpId() {
         return pId;

@@ -17,11 +17,21 @@ public class RepositoryMessageDto {
 
     private String repository_name;
 
+    private String repository_id;
+
     private Float p_balance;
 
     private String kinds;
 
     private static final long serialVersionUID = 1L;
+
+    public String getRepository_id() {
+        return repository_id;
+    }
+
+    public void setRepository_id(String repository_id) {
+        this.repository_id = repository_id;
+    }
 
     public String getId() {
         return id;

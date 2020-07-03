@@ -41,22 +41,34 @@
     where p_id = #{pId,jdbcType=VARCHAR}
   </select>
   <select id="selectAll" resultType="team.zmn.repository.pojo.ProductMessageDto" >
-   SELECT
-	pm.p_id,
-	pm.p_name,
-	pm.p_type,
-	pm.p_balance1,
-	pm.p_stock_price,
-	pm.p_delivery_price,
-	re.repository_name,
-	re.kinds,
-	rem.p_balance
-FROM
-	product_message AS pm,
-	repository AS re,
-	repository_message AS rem
-WHERE
-	pm.repository_id = re.repository_id
-	AND re.repository_id = rem.repository_id
-  </select>
+        SELECT
+            pm.p_id,
+            pm.p_name,
+            pm.p_type,
+            pm.p_balance1,
+            pm.p_stock_price,
+            pm.p_delivery_price,
+            re.repository_id,
+            re.repository_name,
+            re.kinds,
+            rem.p_balance
+        FROM
+            product_message AS pm,
+            repository_message AS rem,
+            repository AS re
+        WHERE
+            pm.p_id = rem.p_id
+            AND rem.repository_id = re.repository_id
+    </select>
+    <select id="selectBalance" resultType="float" parameterType="string">
+        SELECT
+             p_balance
+        FROM
+             repository_message
+        WHERE
+             p_id = #{p_id}
+        AND repository_id = #{repository_id}
+
+    </select>
+
 </mapper>

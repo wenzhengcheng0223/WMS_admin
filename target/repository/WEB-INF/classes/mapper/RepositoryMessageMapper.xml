@@ -29,12 +29,25 @@
     from repository_message
     where id = #{id,jdbcType=VARCHAR}
   </select>
-  <select id="selectAll" resultType="team.zmn.repository.pojo.RepositoryMessageDto" >
+  <select id="selectAll" resultType="repositoryMessageDto" >
     SELECT
-        rem.id,	re.repository_name,	re.kinds,	rem.p_id,	pm.p_name,	rem.p_balance
+        rem.id, rem.repository_id,   re.repository_name,	re.kinds,	rem.p_id,	pm.p_name,	rem.p_balance
     FROM
         repository_message AS rem,	repository AS re,	product_message AS pm
     WHERE
         rem.repository_id = re.repository_id 	AND rem.p_id = pm.p_id
+  </select>
+
+  <select id="selectBalance" resultType="float" parameterType="string">
+        SELECT
+             p_balance
+        FROM
+             repository_message
+        WHERE
+             p_id = #{p_id}
+        AND repository_id = #{repository_id}
+
+
+
   </select>
 </mapper>

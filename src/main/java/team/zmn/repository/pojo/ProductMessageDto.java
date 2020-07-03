@@ -9,6 +9,7 @@ package team.zmn.repository.pojo;
  */
 
 public class ProductMessageDto {
+    private String id;
 
     private String p_id;
 
@@ -22,6 +23,8 @@ public class ProductMessageDto {
 
     private Float p_delivery_price;
 
+    private String repository_id;
+
     private String repository_name;
 
     private String kinds;
@@ -29,6 +32,22 @@ public class ProductMessageDto {
     private String p_balance;
 
     private static final long serialVersionUID = 1L;
+
+    public String getRepository_id() {
+        return repository_id;
+    }
+
+    public void setRepository_id(String repository_id) {
+        this.repository_id = repository_id;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getP_id() {
         return p_id;

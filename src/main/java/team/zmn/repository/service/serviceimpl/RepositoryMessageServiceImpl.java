@@ -23,6 +23,21 @@ public class RepositoryMessageServiceImpl implements RepositoryMessageService {
     @Override
     public Result selectAll() {
         List<RepositoryMessageDto> list = messageMapper.selectAll();
+        for (int i = 0;i<list.size();i++){
+            List<Float> floats = messageMapper.selectBalance(list.get(i).getP_id(),list.get(i).getRepository_id());
+            float count = 0f;
+            for (int j = 0;j < floats.size();j++){
+                count+=floats.get(j);
+            }
+            list.get(i).setP_balance(count);
+            for (int j = list.size()-1; j>i;j--){
+                if (list.get(i).getP_id().equals(list.get(j).getP_id())&&list.get(i).getRepository_id().equals(list.get(j).getRepository_id())){
+                    list.remove(j);
+                }
+            }
+
+        }
+
         Result result = new Result();
         result.setCode(0);
         result.setMsg("success");

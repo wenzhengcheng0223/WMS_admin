@@ -50,8 +50,8 @@
         <!--扫描mapper配置文件中的.xml文件-->
         <property name="mapperLocations" value="classpath:mapper/*.xml"/>
         <!--设置别名-->
-<!--        <property name="typeAliasesPackage" value="team.zmn.repository.pojo">-->
-<!--        </property>-->
+        <property name="typeAliasesPackage" value="team.zmn.repository.pojo">
+        </property>
     </bean>
 
     <!-- 定义sqlSession对象，通过SqlSessionTemplate来产生，需要在构造方法中指定会话工厂

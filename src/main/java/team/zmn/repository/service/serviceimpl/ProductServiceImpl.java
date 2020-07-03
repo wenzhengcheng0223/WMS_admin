@@ -26,9 +26,31 @@ public class ProductServiceImpl implements ProductService {
     private Result result = new Result();
 
 
+
+    /**
+     * 查询所有仓库的所有商品信息
+     * @return
+     */
+
     @Override
     public Result selectAll() {
         List<ProductMessageDto> list = product.selectAll();
+        for (int i = 0;i<list.size();i++){
+            //对同仓库同商品进行汇总处理
+            List<Float> floats = product.selectBalance(list.get(i).getP_id(),list.get(i).getRepository_id());
+            System.out.println(floats.size());
+            float count = 0f;
+            for (int j = 0;j<floats.size();j++){
+                System.out.println(j);
+                count+=floats.get(j);
+            }
+            list.get(i).setP_balance(String.valueOf(count));
+            for (int j = list.size()-1;j>i;j--){
+                if (list.get(i).getP_id().equals(list.get(j).getP_id())&&list.get(i).getRepository_id().equals(list.get(j).getRepository_id())){
+                    list.remove(j);
+                }
+            }
+        }
         result.setCode(0);
         result.setMsg("success");
         result.setData(list);
