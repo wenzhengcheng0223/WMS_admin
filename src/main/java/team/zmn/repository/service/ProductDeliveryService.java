@@ -1,5 +1,6 @@
 package team.zmn.repository.service;
 
+import team.zmn.repository.pojo.ProductDelivery;
 import team.zmn.repository.pojo.Result;
 
 /**
@@ -12,4 +13,6 @@ import team.zmn.repository.pojo.Result;
 
 public interface ProductDeliveryService {
     Result selectAll();
+
+    int insert(ProductDelivery delivery);
 }

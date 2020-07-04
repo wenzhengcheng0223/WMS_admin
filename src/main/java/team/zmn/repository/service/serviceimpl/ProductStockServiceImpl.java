@@ -30,4 +30,10 @@ public class ProductStockServiceImpl implements ProductStockService {
         result.setData(list);
         return result;
     }
+
+    @Override
+    public int insert(ProductStock stock) {
+        int inser = mapper.insert(stock);
+        return inser;
+    }
 }

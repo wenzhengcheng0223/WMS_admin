@@ -10,10 +10,17 @@ a {
     font-weight: 300;
 }
 
+#segment{
+    background-color:#2F4056;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    border-bottom: none !important;
+}
+
 #logo {
-    line-height: 50px;
+    line-height: 50px !important;
     background-color: #0085E8;
-    width: 220px;
+    width: 221px;
 }
 
 #logo a {
@@ -37,36 +44,50 @@ a {
     margin-top: -12px !important;
 }
 
+/*侧边栏*/
 #menu-tree {
     position: fixed !important;
     top: 50px;
     width: 220px !important;
-
+    padding-bottom: 50px;
 
 }
 
 #menu-tree ul .layui-nav-item > a {
     padding-top: 5px !important;
     padding-bottom: 5px !important;
+    margin-top: 10px;
 }
 
 #menu-tree ul .layui-nav-item a {
     height: 45px;
     padding-left: 50px;
+    line-height: 35px;
 }
 
 #menu-tree .layui-nav-tree .layui-nav-bar {
     width: 5px;
     height: 0;
     background-color: #93D1FF;
+
 }
 
 
 #menu-tree ul .layui-nav-item .layui-nav-child dd a {
-    padding-left: 55px;
+    padding-left: 75px;
     height: 45px !important;
+    line-height: 45px;
 }
 
 #menu-tree .layui-this > a {
     background-color: #0085E8;
+}
+/*侧边栏小三角*/
+.layui-nav-tree .layui-nav-more{
+    right: 25px !important;
+}
+
+/*iframe*/
+.admin-lframe{
+    border: none;
 }

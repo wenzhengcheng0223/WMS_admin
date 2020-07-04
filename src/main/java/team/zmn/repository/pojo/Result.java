@@ -12,7 +12,7 @@ import java.util.List;
 
 public class Result {
 
-    private Integer code;
+    private Integer code = 0;
     private String msg;
     private Long count;
     private List data;

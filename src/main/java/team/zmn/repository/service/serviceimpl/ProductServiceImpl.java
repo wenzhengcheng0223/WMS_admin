@@ -24,9 +24,6 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     private ProductMessageMapper product;
     private Result result = new Result();
-
-
-
     /**
      * 查询所有仓库的所有商品信息
      * @return

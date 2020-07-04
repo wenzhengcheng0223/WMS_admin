@@ -1,6 +1,7 @@
 package team.zmn.repository.service;
 
 
+import team.zmn.repository.pojo.ProductStock;
 import team.zmn.repository.pojo.Result;
 
 /**
@@ -17,4 +18,7 @@ public interface ProductStockService {
      * @return
      */
     Result selectAll();
+
+    int insert(ProductStock stock);
+
 }

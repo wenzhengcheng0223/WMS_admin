@@ -35,4 +35,11 @@ public class ProductDeliveryServiceImpl implements ProductDeliveryService {
         return result;
     }
 
+    @Override
+    public int insert(ProductDelivery delivery) {
+        int insert = deliveryMapper.insert(delivery);
+        return insert;
+
+    }
+
 }
