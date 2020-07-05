@@ -53,4 +53,10 @@ public class ProductServiceImpl implements ProductService {
         result.setData(list);
         return result;
     }
+
+    @Override
+    public int delete(ProductMessageDto dto) {
+        int i = product.deleteByPrimaryKey(dto.getP_id());
+        return i;
+    }
 }

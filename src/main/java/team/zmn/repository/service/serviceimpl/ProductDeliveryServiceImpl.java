@@ -42,4 +42,11 @@ public class ProductDeliveryServiceImpl implements ProductDeliveryService {
 
     }
 
+    @Override
+    public int delete(ProductDelivery delivery) {
+        int i = deliveryMapper.deleteByPrimaryKey(delivery.getpDeliveryNo());
+        return i;
+
+    }
+
 }

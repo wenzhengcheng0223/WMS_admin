@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import team.zmn.repository.pojo.ProductMessageDto;
 import team.zmn.repository.pojo.ProductStock;
 import team.zmn.repository.pojo.Result;
 import team.zmn.repository.service.ProductStockService;
@@ -55,5 +56,18 @@ public class ProductStorkController {
         }
         return map;
 
+    }
+    @ResponseBody
+    @RequestMapping("/del")
+    public Object del(ProductStock stock){
+        Map<String ,Object> map = new HashMap<>();
+        int insert = stockService.delete(stock);
+        System.out.println(insert);
+        if (insert == 1){
+            map.put("result","success!");
+        }else{
+            map.put("result","fail!");
+        }
+        return map;
     }
 }

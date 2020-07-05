@@ -1,5 +1,6 @@
 package team.zmn.repository.service;
 
+import team.zmn.repository.pojo.RepositoryMessageDto;
 import team.zmn.repository.pojo.Result;
 
 /**
@@ -16,4 +17,6 @@ public interface RepositoryMessageService {
      * @return
      */
     Result selectAll();
+
+    int delete(RepositoryMessageDto dto);
 }

@@ -2,6 +2,7 @@ package team.zmn.repository.service;
 
 import team.zmn.repository.pojo.Result;
 import team.zmn.repository.pojo.User;
+import team.zmn.repository.pojo.UserDto;
 
 import java.util.List;
 
@@ -21,4 +22,6 @@ public interface  UserService {
      * @return list
      */
     Result selectAll();
+
+    int delete(UserDto user);
 }

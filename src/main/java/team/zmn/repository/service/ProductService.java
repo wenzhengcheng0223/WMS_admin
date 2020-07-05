@@ -1,5 +1,7 @@
 package team.zmn.repository.service;
 
+import team.zmn.repository.pojo.ProductMessage;
+import team.zmn.repository.pojo.ProductMessageDto;
 import team.zmn.repository.pojo.Result;
 
 /**
@@ -17,4 +19,5 @@ public interface ProductService {
      */
     Result selectAll();
 
+    int delete(ProductMessageDto dto);
 }

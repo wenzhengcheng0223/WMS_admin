@@ -13,7 +13,7 @@
   </resultMap>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from product_message
-    where p_id = #{pId,jdbcType=VARCHAR}
+    where p_id = #{p_id,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="team.zmn.repository.pojo.ProductMessage" >
     insert into product_message (p_id, p_name, p_type, 

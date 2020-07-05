@@ -44,4 +44,10 @@ public class RepositoryMessageServiceImpl implements RepositoryMessageService {
         result.setData(list);
         return result;
     }
+
+    @Override
+    public int delete(RepositoryMessageDto dto) {
+        int i = messageMapper.deleteByPrimaryKey(dto.getId());
+        return i;
+    }
 }

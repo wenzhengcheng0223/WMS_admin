@@ -15,4 +15,6 @@ public interface ProductDeliveryService {
     Result selectAll();
 
     int insert(ProductDelivery delivery);
+
+    int delete(ProductDelivery delivery);
 }

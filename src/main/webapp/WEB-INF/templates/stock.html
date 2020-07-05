@@ -106,16 +106,18 @@
         form.on('submit(formDemo)', function(data){
             $.ajax({
                 url:'../productStock/add',
-                type:'get',
+                type:'post',
                 data:data.field,
                 dataType:'json',
                 success:function (data) {
                     if (data.result != ""){
-                        layer.alert(data.result)
+                        layer.alert(data.result);
+
                     }
                 }
 
             });
+
 
             return false;
         });

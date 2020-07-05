@@ -36,4 +36,12 @@ public class ProductStockServiceImpl implements ProductStockService {
         int inser = mapper.insert(stock);
         return inser;
     }
+
+    @Override
+    public int delete(ProductStock stock) {
+        int i = mapper.deleteByPrimaryKey(stock.getpStockNo());
+        return i;
+    }
+
+
 }

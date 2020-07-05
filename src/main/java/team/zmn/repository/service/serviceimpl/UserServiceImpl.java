@@ -33,5 +33,12 @@ public class UserServiceImpl implements UserService {
         return result;
     }
 
+    @Override
+    public int delete(UserDto user) {
+
+        int i = userMapper.deleteByPrimaryKey(user.getUser_id());
+        return i;
+    }
+
 }
 

@@ -21,4 +21,5 @@ public interface ProductStockService {
 
     int insert(ProductStock stock);
 
+    int delete(ProductStock stock);
 }

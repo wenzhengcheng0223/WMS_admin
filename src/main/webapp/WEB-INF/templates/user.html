@@ -32,9 +32,10 @@
 <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
 
 <script>
-    layui.use('table', function() {
+    layui.use(['table','layer'], function() {
         var table = layui.table;
-
+        var layer = layui.layer;
+        var $ = layui.$;
         table.render({
             elem: '#table',
             url: '../user/selectAll',
@@ -64,12 +65,14 @@
                     title: '密码',
 
 
-                }, {
+                },
+                    {
                     field: 'role_type',
                     title: '用户权限',
 
                     sort: true
-                },{
+                },
+                    {
                     fixed: 'right',
                     title: '操作',
                     toolbar: '#barDemo',
@@ -108,9 +111,23 @@
             var data = obj.data;
             //console.log(obj)
             if (obj.event === 'del') {
-                layer.confirm('真的删除行么', function(index) {
+                layer.confirm('您确定要删除此用户吗？', function (index) {
                     obj.del();
                     layer.close(index);
+                    $.ajax({
+                        url: "../user/del",    //换成自己的url
+                        type: "post",
+                        dataType: "json",
+                        data: data,
+                        success: function (e) {
+                            layer.msg(e.result);
+
+                        },
+                        error: function (e) {
+                            layer.msg(e);
+                        }
+                    })
+
                 });
             } else if (obj.event === 'edit') {
                 layer.prompt({
