@@ -9,7 +9,7 @@ public class ProductMessage implements Serializable {
 
     private String pType;
 
-    private Float pBalance;
+    private Float pBalance1;
 
     private Float pStockPrice;
 
@@ -20,6 +20,14 @@ public class ProductMessage implements Serializable {
     private String repositoryName;
 
     private static final long serialVersionUID = 1L;
+
+    public Float getpBalance1() {
+        return pBalance1;
+    }
+
+    public void setpBalance1(Float pBalance1) {
+        this.pBalance1 = pBalance1;
+    }
 
     public String getpId() {
         return pId;
@@ -46,11 +54,11 @@ public class ProductMessage implements Serializable {
     }
 
     public Float getpBalance() {
-        return pBalance;
+        return pBalance1;
     }
 
     public void setpBalance(Float pBalance) {
-        this.pBalance = pBalance;
+        this.pBalance1 = pBalance;
     }
 
     public Float getpStockPrice() {

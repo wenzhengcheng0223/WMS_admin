@@ -13,7 +13,7 @@
   </resultMap>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from product_message
-    where p_id = #{pId,jdbcType=VARCHAR}
+    where p_id = #{p_id,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="team.zmn.repository.pojo.ProductMessage" >
     insert into product_message (p_id, p_name, p_type, 
@@ -40,9 +40,35 @@
     from product_message
     where p_id = #{pId,jdbcType=VARCHAR}
   </select>
-  <select id="selectAll" resultMap="BaseResultMap" >
-    select p_id, p_name, p_type, p_balance, p_stock_price, p_delivery_price, repository_id, 
-    repository_name
-    from product_message
-  </select>
+  <select id="selectAll" resultType="team.zmn.repository.pojo.ProductMessageDto" >
+        SELECT
+            pm.p_id,
+            pm.p_name,
+            pm.p_type,
+            pm.p_balance1,
+            pm.p_stock_price,
+            pm.p_delivery_price,
+            re.repository_id,
+            re.repository_name,
+            re.kinds,
+            rem.p_balance
+        FROM
+            product_message AS pm,
+            repository_message AS rem,
+            repository AS re
+        WHERE
+            pm.p_id = rem.p_id
+            AND rem.repository_id = re.repository_id
+    </select>
+    <select id="selectBalance" resultType="float" parameterType="string">
+        SELECT
+             p_balance
+        FROM
+             repository_message
+        WHERE
+             p_id = #{p_id}
+        AND repository_id = #{repository_id}
+
+    </select>
+
 </mapper>

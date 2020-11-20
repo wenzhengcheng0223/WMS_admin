@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../layui/layui/css/layui.css">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="../layui/layui/layui.js"></script>
+</head>
+<body>
+<div class="layui-card">
+    <div class="layui-card-header">商品出库订单填写</div>
+    <div class="layui-card-body">
+        <form class="layui-form" action="">
+            <div class="layui-form-item">
+                <label class="layui-form-label">入库单号</label>
+                <div class="layui-input-block">
+                    <input type="text" name="pStockNo" required  lay-verify="required" placeholder="请输入订单号" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">商品ID</label>
+                <div class="layui-input-block">
+                    <input type="text" name="pId" required  lay-verify="required" placeholder="请输入商品ID" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">商品名称</label>
+                <div class="layui-input-block">
+                    <input type="text" name="pName" required  lay-verify="required" placeholder="请输入商品名称" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">商品类型</label>
+                <div class="layui-input-block">
+                    <input type="text" name="pType" required  lay-verify="required" placeholder="请输入商品类型" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">商品入库单价</label>
+                <div class="layui-input-block">
+                    <input type="text" name="pStockPrice" required  lay-verify="required" placeholder="请输入商品入库单价" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">商品入库数量</label>
+                <div class="layui-input-block">
+                    <input type="text" name="pStockNumber" required  lay-verify="required" placeholder="请输入商品入库数量" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">商品入库总价</label>
+                <div class="layui-input-block">
+                    <input type="text" name="pStockTotal" required  lay-verify="required" placeholder="请输入商品入库总价" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">商品供货商</label>
+                <div class="layui-input-block">
+                    <input type="text" name="pSupplier" required  lay-verify="required" placeholder="请输入商品供货商" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">经办人</label>
+                <div class="layui-input-block">
+                    <input type="text" name="userId" required  lay-verify="required" placeholder="请输入经办人" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">入库日期</label>
+                <div class="layui-input-block">
+                    <input type="text" name="pStockDate" id="date" required  lay-verify="required" placeholder="请输入入库日期" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">备注</label>
+                <div class="layui-input-block">
+                    <textarea name="pRemarks" placeholder="请输入备注" class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script>
+    //Demo
+    layui.use(['form','layer','laydate'], function(){
+        var form = layui.form;
+        var layer = layui.layer;
+        var $ = layui.jquery;
+        var laydate = layui.laydate;
+
+        laydate.render({
+            elem:'#date'
+        });
+
+
+        //监听提交
+        form.on('submit(formDemo)', function(data){
+            $.ajax({
+                url:'../productStock/add',
+                type:'post',
+                data:data.field,
+                dataType:'json',
+                success:function (data) {
+                    if (data.result != ""){
+                        layer.alert(data.result);
+
+                    }
+                }
+
+            });
+
+
+            return false;
+        });
+    });
+</script>
+</body>
+</html>

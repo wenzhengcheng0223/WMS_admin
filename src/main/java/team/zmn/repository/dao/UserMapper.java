@@ -2,6 +2,7 @@ package team.zmn.repository.dao;
 
 import java.util.List;
 import team.zmn.repository.pojo.User;
+import team.zmn.repository.pojo.UserDto;
 
 public interface UserMapper {
     int deleteByPrimaryKey(String userId);
@@ -10,7 +11,7 @@ public interface UserMapper {
 
     User selectByPrimaryKey(String userId);
 
-    List<User> selectAll();
+    List<UserDto> selectAll();
 
     int updateByPrimaryKey(User record);
 }
